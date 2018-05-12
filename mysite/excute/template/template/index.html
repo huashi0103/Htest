@@ -1,0 +1,12 @@
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"/>
+
+{% if bat_list %}
+	<ul>
+	{% for bat in bat_list %}
+		<li><a href="{% url 'extcute:execute' bat%}">{{bat}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>has now bat.</p>
+{% endif %}
